@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.btn {
+    background-color: $clr-navy;
+    color: $clr-white;
+    font-family: $ff-main;
+    font-weight: $fw-bold;
+    border-radius: 28px;
+    padding: 16px 48px;
+    font-size: 20px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+        background-color: $clr-navy-2;
+    }
+
+    &-white {
+        background-color: $clr-white;
+        color: $clr-navy;
+        padding: 12px 32px;
+        font-size: 18px;
+        letter-spacing: 1.26px;
+    }
+
+    &-turquoise {
+        background-color: $clr-turquoise;
+        &:hover {
+            background-color: $clr-turquoise-dark;
+        }
+    }
+    
+    
+}
+  

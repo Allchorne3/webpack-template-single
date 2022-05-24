@@ -1,1 +1,17 @@
-@use "global"
+// Base
+@use "base/reset";
+@use "base/typography";
+
+// Abstracts
+@use 'abstracts/breakpoints';
+@use 'abstracts/variables';
+@use 'abstracts/layouts';
+@use 'abstracts/utility';
+
+// Components
+@use 'components/buttons';
+@use 'components/slider';
+
+// Layout
+@use 'layout/header';
+@use 'layout/hero';

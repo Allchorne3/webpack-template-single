@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+@import url("https://use.typekit.net/qoo5krq.css");
+
+body {
+    font-family: $ff-main;
+    font-weight: $fw-regular;
+
+    h1, h2, h3 {
+        color: $clr-navy;
+    }
+      
+    h1 {
+        font-size: 64px;
+        line-height: 1.125;
+        font-weight: $fw-regular;
+    }
+      
+    h2 {
+        font-size: 48px;
+        line-height: 1.167;
+        margin-bottom: 24px;
+    }
+      
+    h3 {
+        font-size: 24px;
+    }
+      
+    p {
+        font-size: 20px;
+        line-height: 1.6;
+    
+        &.card-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+    
+}
+  

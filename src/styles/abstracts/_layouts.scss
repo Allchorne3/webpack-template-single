@@ -1,0 +1,9 @@
+.container {
+    max-width: 1175px;
+    margin-inline: auto;
+
+    &--small {
+        max-width: 780px;
+        margin-inline: auto;
+    }
+}
