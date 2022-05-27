@@ -1,8 +1,9 @@
 const path = require('path')
+const webpack = require('webpack')
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 let mode = 'development'
@@ -45,22 +46,6 @@ module.exports = {
           'sass-loader'
         ]
       },
-
-      // Images
-      {
-        test: /\.(svg|ico|png|jpe?g|gif|webp)$/, 
-        type: 'asset/resource',
-        use: [{
-          loader: ImageMinimizerPlugin.loader,
-          options: {
-            severityError: 'warning',
-            minimizerOptions: {
-              plugins: ['gifsicle']
-            }
-          }
-        }]
-      },
-
       // JS
       {
         test: /\.js$/,
@@ -75,29 +60,13 @@ module.exports = {
     ]
   },
 
-  // Optimizations
-  optimization: {
-    minimizer: [
-      "...",
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            // Lossless optimization with custom option
-            // Feel free to experiment with options for better result for you
-            plugins: [
-              ["gifsicle", { interlaced: true }],
-              ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 10 }],
-            ],
-          },
-        },
-      }),
-    ],
-  },
-
   //plugins
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
+
     new CleanWebpackPlugin(),
     
     new HtmlWebpackPlugin({

@@ -1,4 +1,5 @@
 import "./styles/main.scss"
+import $ from 'jquery';
 
 const fish = {
     cat: 1, 
